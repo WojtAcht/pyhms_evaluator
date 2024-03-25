@@ -1,0 +1,12 @@
+{
+    "cma_generations": 29,
+    "cma_metaepochs": 252,
+    "cma_sigma0": 2.9596486237653172,
+    "ea_generations": 1,
+    "ea_mutation_std": 2.503859206550965,
+    "ea_pop_size": 34,
+    "level_limit": 2,
+    "nbc_cut": 2.9005545748764776,
+    "nbc_far": 3.9537742420941786,
+    "nbc_trunc": 0.11160124376083613
+}
