@@ -17,3 +17,5 @@ To tune parameters:
 ```
 python3 -m pyhms_evaluator.tuner
 ```
+
+Please use `results.ipynb` to investigate results.
