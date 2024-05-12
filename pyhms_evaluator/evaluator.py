@@ -49,13 +49,17 @@ class ProblemEvaluator:
                     "solver": solver.__class__.__name__,
                     "fitness_mean": np.mean(fitness_values),
                     "fitness_std": np.std(fitness_values),
+                    "fitness_values": fitness_values,
+                    "success_rate": np.mean(fitness_values < precision),
                 }
             )
         end = time()
         print(f"Problem {problem.id} evaluated in {(end - start):.2f} seconds")
         return pd.DataFrame(rows)
 
-    def __call__(self) -> pd.DataFrame:
+    def __call__(self, precision: float | None = 1e-8) -> pd.DataFrame:
         with Pool(self.max_pool) as p:
-            pool_outputs = p.map(lambda problem: self.evaluate_problem(problem), self.problems)
+            pool_outputs = p.map(
+                lambda problem: self.evaluate_problem(problem, precision), self.problems
+            )
         return pd.concat(pool_outputs)

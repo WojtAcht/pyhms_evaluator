@@ -18,4 +18,9 @@ To tune parameters:
 python3 -m pyhms_evaluator.tuner
 ```
 
+To investigate hyperparameter optimization:
+```
+deepcave --open
+```
+
 Please use `results.ipynb` to investigate results.
